@@ -1,5 +1,5 @@
 // // Import getAllItemsHandler function from get-all-items.mjs
-// import { getAllItemsHandler } from "../../../src/handlers/get-all-items.mjs";
+// import { getAllItemsHandler } from "../../../users/handlers/get-all-items.mjs";
 // // Import dynamodb from aws-sdk
 // import { mockClient } from "aws-sdk-client-mock";
 //
