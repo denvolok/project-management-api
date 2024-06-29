@@ -3,10 +3,11 @@
   "display": "Node.js",
   "extends": "./base.json",
   "compilerOptions": {
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "sourceMap": true
   }
 }
