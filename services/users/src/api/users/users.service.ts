@@ -1,34 +1,19 @@
 import { Injectable, Logger, UnauthorizedException } from "@nestjs/common";
 import * as bcrypt from "bcrypt";
 import { JwtService } from "@nestjs/jwt";
+import { PrismaService } from "../../services/prisma.service";
 
 @Injectable()
 export class UsersService {
   private logger = new Logger(this.constructor.name);
 
-  private users = [
-    {
-      id: 1,
-      organizationId: 1,
-      role: "admin",
-      email: "admin@example.com",
-      password: "",
-      firstName: "Admin",
-    },
-    {
-      id: 2,
-      organizationId: 1,
-      role: "user",
-      email: "user@example.com",
-      password: "",
-      firstName: "User",
-    },
-  ];
-
-  constructor(private jwtService: JwtService) {}
+  constructor(
+    private jwtService: JwtService,
+    private prisma: PrismaService,
+  ) {}
 
   public async getUserByEmail(email: string) {
-    return this.users.find((user) => user.email === email);
+    return this.prisma.user.findFirst({ where: { email } });
   }
 
   public async signIn(data: { email: string; password: string }): Promise<{ jwtToken: string }> {

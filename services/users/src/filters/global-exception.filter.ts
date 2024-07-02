@@ -25,7 +25,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       path: req.path,
     };
 
-    this.logger.error(responseBody);
+    this.logger.error(exception);
     res.status(httpStatus).json(responseBody);
   }
 }

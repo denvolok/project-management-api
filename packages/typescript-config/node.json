@@ -8,6 +8,7 @@
     "importHelpers": true,
     "target": "ES2022",
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "sourceMap": true
   }
 }
